@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+<h3 class="text-center"><i><u>Movies</i></u></h3>
+<br>
+<br>
+<div class="container">
+  <div class='row'>
+   {% for i in movie %}
+    <div class='col-sm-4'>
+        <div class="card mx-auto " style="width: 18rem;">
+        <img src="{{i.image.url}}" class="card-img-top" alt="..." height="300px" width="140%">
+        <div class="card-body">
+        <h4 class="card-title">{{i.title}}</h4>
+        <p class="card-text">{{i.year}}</p>
+<!--          <a href="{% url 'details' i.id %}" class="btn btn-primary">Details</a>-->
+            <a href="{% url 'details' i.id %}" class="btn btn-primary">Details</a>
+  </div></div>
+        </div>
+   {% endfor %}</div>
+</div>
+{% endblock %}
